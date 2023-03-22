@@ -1,0 +1,12 @@
+.list-group-item:hover
+{
+  background-color:#adf7d1;
+}
+.list-group-item{
+  background-color:#128494;
+  border:1px solid black;
+}
+.nav-item{
+  list-style-type: none;
+}
+

@@ -1,0 +1,30 @@
+<div *ngIf="!loading">
+  <div class="cardd mb-3 p-1" *ngIf="product; else noProduct">
+    <div class="roww">
+      <div class="colimg">
+        <img
+          src="/assets/images/{{ product.image }}"
+          alt=""
+          class="img-fluid rounded-start"
+        />
+      </div>
+      <div class="colbody">
+        <div class="card-bodyy">
+          <h5 class="card-titlee">{{ product.pName }}</h5>
+          <p class="cart-textt" [innerHtml]="product.desc"></p>
+
+          <a routerLink="/products" class="btn btn-primary mt-5  Geri-dön">Geri dön</a>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+<ng-template #noProduct>
+  <div class="alert alert-warning">no product</div>
+</ng-template>
+<div *ngIf="loading" class="d-flex justify-content-center">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>

@@ -1,0 +1,97 @@
+<nav id="navbarbg" class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mt-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/"
+            >Ana Sayfa</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/products"
+            >Tüm Ürünler</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/products/category/-NGw7QQ_P-pduJVqy9Qq"
+            >Kolye</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/products/category/-NGw7UVQef0xU-8Tpoxa"
+            >Bileklik</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/products/category/-NGw7WMPNog1m7ymepid"
+            >Magnet</a
+          >
+        </li>
+
+
+
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2  mb-lg-0">
+        <li class="nav-item dropdown navbar-right">
+          <a
+            class="nav-link dropdown-toggle active"
+            href="products"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Diger Kategoriler
+          </a>
+
+          <ul class="dropdown-menu">
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" href="/products/category/-NGw7Z57QTAYD3zEnFE0">Küpe</a>
+            </li>
+            <li *ngIf="isAdmin">
+              <a class="dropdown-item" href="/products/create">Ürün Kayıt</a>
+            </li>
+            <li *ngIf="isAdmin">
+              <a class="dropdown-item" href="/categories/create"
+                >Kategori Kayıt</a
+              >
+            </li>
+            <ul *ngIf="isAdmin" class="">
+              <li *ngIf="!isAuthenticated" class="nav-item">
+                <a routerLink="/auth" class="nav-link">Login</a>
+              </li>
+              <li *ngIf="!isAuthenticated" class="nav-item">
+                <a routerLink="/auth" class="nav-link">Register</a>
+              </li>
+              <li (click)="logout()" *ngIf="isAuthenticated" class="nav-item">
+                <a routerLink="/auth" class="nav-link">Logout</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            routerLink="/contact"
+            >İletişim</a
+          >
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+<hr />
